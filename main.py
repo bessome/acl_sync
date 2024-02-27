@@ -20,12 +20,13 @@ acl_number = 0
 acl_list = []
 for line in f_acl_new:
     if "no access-list" in line:
+        d_acl_new[acl_number]= acl_list
         acl_number = line.split()[2]
-        print(acl_list)
-
+        #print(acl_list)
         acl_list = []
     else:
         acl_list.append(line)
         #print(acl_list)
-print(acl_list)
+d_acl_new[acl_number]= acl_list
+print(d_acl_new)
 
