@@ -1,0 +1,12 @@
+no access-list 123
+access-list 123 permit ip any host 224.0.0.102
+access-list 123 permit ip any 10.2.70.129 0.0.0.63
+
+no access-list 126
+access-list 126 permit ip any host 224.0.0.102
+access-list 126 permit ip any 10.2.70.129 0.0.0.63
+
+no access-list 127
+access-list 127 permit ip any host 224.0.0.102
+access-list 127 permit ip any 10.2.70.129 0.0.0.63
+
