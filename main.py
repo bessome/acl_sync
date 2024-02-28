@@ -28,5 +28,8 @@ for line in f_acl_new:
         acl_list.append(line)
         #print(acl_list)
 d_acl_new[acl_number]= acl_list
-print(d_acl_new)
+#print(d_acl_new)
+
+for key in d_acl_new:
+    print(str(d_acl_new[key]))
 
