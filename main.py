@@ -32,4 +32,5 @@ d_acl_new[acl_number]= acl_list
 
 for key in d_acl_new:
     print(str(d_acl_new[key]))
+    print()
 
