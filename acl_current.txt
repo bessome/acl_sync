@@ -1,9 +1,46 @@
-no access-list 123
-access-list 123 permit ip any host 224.0.0.102
-access-list 123 permit ip any 10.2.70.129 0.0.0.63
-access-list 123 permit ip 10.0.23.0 0.0.0.255 10.0.23.0 0.0.0.255
-access-list 123 permit ip 10.0.23.0 0.0.0.255 10.250.0.0 0.0.0.255
-access-list 123 permit ip 10.0.23.0 0.0.0.255 10.0.101.0 0.0.0.255
-no access-list 126
-access-list 126 permit ip any host 224.0.0.102
-access-list 126 permit ip any 10.2.70.129 0.0.0.63
+no access-list 2055
+access-list 2055 permit ip any host 224.0.0.102ip a
+no access-list 2056
+access-list 2056 permit ip any host 224.0.0.102
+no access-list 2057
+access-list 2057 permit ip any host 224.0.0.102
+access-list 2057 permit ip any 10.2.70.129 0.0.0.63
+access-list 2057 permit icmp 10.2.85.0 0.0.0.255 10.2.85.0 0.0.0.255
+access-list 2057 permit ip 10.2.85.0 0.0.0.255 10.122.0.0 0.0.15.255
+access-list 2057 permit ip 10.2.85.0 0.0.0.255 10.123.0.0 0.0.15.255
+access-list 2057 permit ip 10.2.85.0 0.0.0.255 10.133.0.0 0.0.255.255
+access-list 2057 permit ip 10.2.85.0 0.0.0.255 10.134.0.0 0.0.255.255
+
+no ip access-list extended vlan50
+ip access-list extended vlan50
+permit ip any host 224.0.0.102
+permit ip any 10.2.70.128 0.0.0.63
+permit icmp 10.2.92.0 0.0.0.255 10.2.92.0 0.0.0.255
+permit ip 10.2.92.0 0.0.0.255 10.250.0.0 0.0.0.255
+
+no ip access-list extended vlan160
+ip access-list extended vlan160
+permit ip any host 224.0.0.102
+permit ip any 10.2.70.128 0.0.0.63
+permit icmp 10.2.88.64 0.0.0.31 10.2.88.64 0.0.0.31
+permit ip 10.2.88.64 0.0.0.31 10.0.180.0 0.0.0.255
+deny   ip 10.2.88.64 0.0.0.31 10.0.0.0 0.255.255.255
+deny   ip 10.2.88.64 0.0.0.31 192.168.0.0 0.0.255.255
+deny   ip 10.2.88.64 0.0.0.31 172.16.0.0 0.15.255.255
+permit ip 10.2.88.64 0.0.0.31 any
+
+no ip access-list extended vlan173
+ip access-list extended vlan173
+permit ip any host 224.0.0.102
+permit ip any 10.2.70.128 0.0.0.63
+permit icmp 10.2.92.0 0.0.0.255 10.2.92.0 0.0.0.255
+permit ip 10.2.92.0 0.0.0.255 10.2.81.0 0.0.0.255
+permit ip 10.2.92.0 0.0.0.255 172.17.16.0 0.0.0.255
+deny ip 10.2.92.0 0.0.0.255 10.0.0.0 0.255.255.255
+deny ip 10.2.92.0 0.0.0.255 192.168.0.0 0.0.255.255
+deny ip 10.2.92.0 0.0.0.255 172.16.0.0 0.15.255.255
+permit ip 10.2.92.0 0.0.0.255 any
+
+no ip access-list extended vlan199
+ip access-list extended vlan199
+permit ip any host 224.0.0.102

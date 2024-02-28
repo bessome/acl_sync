@@ -7,6 +7,7 @@ import re
 import requests
 from filecmp import cmp
 from ntc_templates.parse import parse_output
+import napalm
 
 acl_current="acl_current.txt"
 acl_new="acl_new.txt"
@@ -51,11 +52,11 @@ for key in acl_dict_new:
             print(str(key) + " no diff")
         else:
             acl_dict_cand[key] = acl_dict_new[key]
-            print(str(key) + ' OK')
+            print(str(key) + ' SYNC NEEDED')
     except:
         acl_dict_cand[key] = acl_dict_new[key]
-        print(str(key) + ' OK')
+        print(str(key) + ' SYNC NEEDED')
 #print(acl_dict_cand)
 
-#for key in acl_dict_cand:
-#    print(listToString(acl_dict_cand[key]))
+for key in acl_dict_cand:
+    print(listToString(acl_dict_cand[key]))
