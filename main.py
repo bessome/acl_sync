@@ -14,6 +14,14 @@ acl_new="acl_new.txt"
 f_acl_new = open(acl_new, 'r')
 f_acl_current = open(acl_current, 'r')
 
+
+def listToString(s):
+    # initialize an empty string
+    str1 = ""
+    for ele in s:
+        str1 += ele
+    return str1
+
 def acl_file_to_dict(file):
     acl_number = 0
     acl_list = []
@@ -24,7 +32,7 @@ def acl_file_to_dict(file):
             acl_dict[acl_number]= acl_list
             acl_number = line.split()[2]
             #print(acl_list)
-            acl_list = []
+            acl_list = ['no access-list ' + str(acl_number) + '\n']
         else:
             acl_list.append(line)
             #print(acl_list)
@@ -35,13 +43,19 @@ def acl_file_to_dict(file):
 if __name__ == '__main__':
     acl_dict_new = acl_file_to_dict(acl_new)
     acl_dict_current = acl_file_to_dict(acl_current)
+    acl_dict_cand = {}
 
 for key in acl_dict_new:
     try:
         if acl_dict_new[key] == acl_dict_current[key]:
             print(str(key) + " no diff")
         else:
-            print(str(acl_dict_new[key]))
+            acl_dict_cand[key] = acl_dict_new[key]
+            print(str(key) + ' OK')
     except:
-        print("An exception occurred")
+        acl_dict_cand[key] = acl_dict_new[key]
+        print(str(key) + ' OK')
+#print(acl_dict_cand)
 
+#for key in acl_dict_cand:
+#    print(listToString(acl_dict_cand[key]))
