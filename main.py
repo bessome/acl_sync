@@ -37,6 +37,11 @@ if __name__ == '__main__':
     acl_dict_current = acl_file_to_dict(acl_current)
 
 for key in acl_dict_new:
-    print(str(acl_dict_new[key]))
-    print()
+    try:
+        if acl_dict_new[key] == acl_dict_current[key]:
+            print(str(key) + " no diff")
+        else:
+            print(str(acl_dict_new[key]))
+    except:
+        print("An exception occurred")
 
