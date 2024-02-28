@@ -15,7 +15,6 @@ acl_new="acl_new.txt"
 f_acl_new = open(acl_new, 'r')
 f_acl_current = open(acl_current, 'r')
 
-
 def listToString(s):
     # initialize an empty string
     str1 = ""
@@ -50,18 +49,16 @@ if __name__ == '__main__':
     acl_dict_new = acl_file_to_dict(acl_new)
     acl_dict_current = acl_file_to_dict(acl_current)
     acl_dict_cand = {}
-
-for key in acl_dict_new:
-    try:
-        if acl_dict_new[key] == acl_dict_current[key]:
-            print(str(key) + " no diff")
-        else:
+    for key in acl_dict_new:
+        try:
+            if acl_dict_new[key] == acl_dict_current[key]:
+                print(str(key) + " no diff")
+            else:
+                acl_dict_cand[key] = acl_dict_new[key]
+                print(str(key) + ' SYNC NEEDED')
+        except:
             acl_dict_cand[key] = acl_dict_new[key]
             print(str(key) + ' SYNC NEEDED')
-    except:
-        acl_dict_cand[key] = acl_dict_new[key]
-        print(str(key) + ' SYNC NEEDED')
-#print(acl_dict_cand)
-
-for key in acl_dict_cand:
-    print(listToString(acl_dict_cand[key]))
+    #print(acl_dict_cand)
+    for key in acl_dict_cand:
+        print(listToString(acl_dict_cand[key]))
