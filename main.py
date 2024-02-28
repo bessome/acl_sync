@@ -37,7 +37,7 @@ def acl_file_to_dict(file):
             acl_dict[acl_number] = acl_list
             acl_number = line.split()[4]
             # print(acl_list)
-            acl_list = ['no access-list ' + str(acl_number) + '\n']
+            acl_list = ['no ip access-list extended ' + str(acl_number) + '\n']
         else:
             acl_list.append(line)
             #print(acl_list)
