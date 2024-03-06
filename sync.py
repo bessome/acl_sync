@@ -5,9 +5,8 @@ def main():
 
     driver_eos = napalm.get_network_driver("eos")
     driver_ios = napalm.get_network_driver("ios")
-    driver_vrp = napalm.get_network_driver("ce")
 
-    device_list = [["10.0.11.204","eos", "switch"], ["10.0.11.253","ios", "router"]]
+    device_list = [["10.11.250.99","ios", "router"]]
 
     network_devices = []
     for device in device_list:
@@ -15,8 +14,8 @@ def main():
             network_devices.append(
                             driver_eos(
                             hostname = device[0],
-                            username = "6696",
-                            password = "vjrhfz*rehbwf",
+                            username = "admin",
+                            password = "admin",
                             optional_args = { 'enable_password' : 'neh,byf9' }
                             )
                               )
@@ -24,17 +23,9 @@ def main():
             network_devices.append(
                             driver_ios(
                             hostname = device[0],
-                            username = "6696",
-                            password = "vjrhfz*rehbwf",
+                            username = "admin",
+                            password = "admin",
                             optional_args = { 'secret' : 'neh,byf9' }
-                            )
-                              )
-        elif device[1] == "vrp":
-            network_devices.append(
-                            driver_vrp(
-                            hostname = device[0],
-                            username = "codingnetworks",
-                            password = "Coding.Networks1"
                             )
                               )
 
