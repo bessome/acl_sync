@@ -9,18 +9,20 @@ from filecmp import cmp
 from ntc_templates.parse import parse_output
 import napalm
 
-acl_current="acl_current.txt"
-acl_new="acl_new.txt"
+acl_current = "acl_current.txt"
+acl_new = "acl_new.txt"
 
 f_acl_new = open(acl_new, 'r')
 f_acl_current = open(acl_current, 'r')
 
-def listToString(s):
+
+def listtostring(s) -> str:
     # initialize an empty string
     str1 = ""
     for ele in s:
         str1 += ele
     return str1
+
 
 def acl_file_to_dict(file):
     acl_number = 0
@@ -29,9 +31,9 @@ def acl_file_to_dict(file):
     f_acl = open(file, 'r')
     for line in f_acl:
         if "no access-list" in line:
-            acl_dict[acl_number]= acl_list
+            acl_dict[acl_number] = acl_list
             acl_number = line.split()[2]
-            #print(acl_list)
+            # print(acl_list)
             acl_list = ['no access-list ' + str(acl_number) + '\n']
         elif "no ip access-list extended" in line:
             acl_dict[acl_number] = acl_list
@@ -40,10 +42,11 @@ def acl_file_to_dict(file):
             acl_list = ['no ip access-list extended ' + str(acl_number) + '\n']
         else:
             acl_list.append(line)
-            #print(acl_list)
-    acl_dict[acl_number]= acl_list
+            # print(acl_list)
+    acl_dict[acl_number] = acl_list
     f_acl.close()
-    return(acl_dict)
+    return (acl_dict)
+
 
 if __name__ == '__main__':
     acl_dict_new = acl_file_to_dict(acl_new)
@@ -61,4 +64,4 @@ if __name__ == '__main__':
             print(str(key) + ' SYNC NEEDED')
     #print(acl_dict_cand)
     for key in acl_dict_cand:
-        print(listToString(acl_dict_cand[key]))
+        print(listtostring(acl_dict_cand[key]))
