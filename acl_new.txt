@@ -1,38 +1,7 @@
-no access-list 2053
-access-list 2053 permit ip any host 224.0.0.102
-access-list 2053 permit ip any 10.2.70.129 0.0.0.63
-access-list 2053 permit icmp 10.2.78.96 0.0.0.31 10.2.78.96 0.0.0.31
-access-list 2053 permit ip 10.2.78.96 0.0.0.31 10.250.0.0 0.0.0.255
-access-list 2053 permit ip 10.2.78.96 0.0.0.31 10.122.0.0 0.0.15.255
-access-list 2053 permit ip 10.2.78.96 0.0.0.31 10.123.0.0 0.0.15.255
-access-list 2053 permit ip 10.2.78.96 0.0.0.31 10.133.0.0 0.0.255.255
-access-list 2053 permit ip 10.2.78.96 0.0.0.31 10.134.0.0 0.0.255.255
-no access-list 2054
-access-list 2054 permit ip any host 224.0.0.102
-access-list 2054 permit ip any host 10.133.3.252
-access-list 2054 permit ip any any
-access-list 2054 permit ip any 10.2.70.129 0.0.0.63
 no access-list 2055
-access-list 2055 permit ip any host 224.0.0.102
-access-list 2055 permit ip any 10.2.70.129 0.0.0.63
-access-list 2055 permit icmp 10.2.80.64 0.0.0.63 10.2.80.64 0.0.0.63
-access-list 2055 permit ip 10.2.80.64 0.0.0.63 10.250.0.0 0.0.0.255
-access-list 2055 permit ip 10.2.80.64 0.0.0.63 10.122.0.0 0.0.15.255
-access-list 2055 permit ip 10.2.80.64 0.0.0.63 10.123.0.0 0.0.15.255
-access-list 2055 permit ip 10.2.80.64 0.0.0.63 10.133.0.0 0.0.255.255
-access-list 2055 permit ip 10.2.80.64 0.0.0.63 10.134.0.0 0.0.255.255
-access-list 2055 permit ip 10.2.80.64 0.0.0.63 10.2.88.224 0.0.0.31
+access-list 2055 permit ip any host 224.0.0.102ip a
 no access-list 2056
 access-list 2056 permit ip any host 224.0.0.102
-access-list 2056 permit ip any 10.2.70.129 0.0.0.63
-access-list 2056 permit icmp 10.2.84.32 0.0.0.31 10.2.84.32 0.0.0.31
-access-list 2056 permit ip 10.2.84.32 0.0.0.31 10.250.0.0 0.0.0.255
-access-list 2056 permit ip 10.2.84.32 0.0.0.31 host 10.0.30.50
-access-list 2056 permit ip 10.2.84.32 0.0.0.31 10.122.0.0 0.0.15.255
-access-list 2056 permit ip 10.2.84.32 0.0.0.31 10.123.0.0 0.0.15.255
-access-list 2056 permit ip 10.2.84.32 0.0.0.31 10.133.0.0 0.0.255.255
-access-list 2056 permit ip 10.2.84.32 0.0.0.31 10.134.0.0 0.0.255.255
-access-list 2056 permit ip 10.2.84.32 0.0.0.31 host 10.2.70.70
 no access-list 2057
 access-list 2057 permit ip any host 224.0.0.102
 access-list 2057 permit ip any 10.2.70.129 0.0.0.63
@@ -75,40 +44,3 @@ permit ip 10.2.92.0 0.0.0.255 any
 no ip access-list extended vlan199
 ip access-list extended vlan199
 permit ip any host 224.0.0.102
-permit ip any 10.2.70.128 0.0.0.63
-permit icmp 10.2.74.192 0.0.0.31 10.2.74.192 0.0.0.31
-permit ip 10.2.74.192 0.0.0.31 10.250.0.0 0.0.0.255
-permit ip 10.2.74.192 0.0.0.31 10.122.0.0 0.0.15.255
-permit ip 10.2.74.192 0.0.0.31 10.123.0.0 0.0.15.255
-permit ip 10.2.74.192 0.0.0.31 10.133.0.0 0.0.255.255
-permit ip 10.2.74.192 0.0.0.31 10.134.0.0 0.0.255.255
-permit ip 10.2.74.192 0.0.0.31 host 10.2.70.70
-permit ip 10.2.74.192 0.0.0.31 host 10.2.69.198
-permit ip 10.2.74.192 0.0.0.31 host 10.2.69.199
-permit ip 10.2.74.192 0.0.0.31 host 10.2.69.203
-permit ip 10.2.74.192 0.0.0.31 host 10.2.69.204
-permit ip 10.2.74.192 0.0.0.31 host 10.0.11.91
-permit tcp host 10.2.74.196 eq 3389 host 10.0.30.24
-permit ip 10.2.74.192 0.0.0.31 host 10.2.69.221
-permit ip 10.2.74.192 0.0.0.31 host 10.10.19.239
-permit ip 10.2.74.192 0.0.0.31 host 10.10.19.240
-deny   ip 10.2.74.192 0.0.0.31 10.0.0.0 0.255.255.255
-deny   ip 10.2.74.192 0.0.0.31 172.16.0.0 0.15.255.255
-deny   ip 10.2.74.192 0.0.0.31 192.168.0.0 0.0.255.255
-permit ip 10.2.74.192 0.0.0.31 any
-
-no ip access-list extended vlan225
-ip access-list extended vlan225
-permit ip any host 224.0.0.102
-permit ip any 10.2.70.128 0.0.0.63
-permit icmp 10.2.88.32 0.0.0.31 10.2.88.32 0.0.0.31
-permit ip 10.2.88.32 0.0.0.31 10.0.177.0 0.0.0.255
-permit ip 10.2.88.32 0.0.0.31 10.0.192.0 0.0.0.255
-permit ip 10.2.88.32 0.0.0.31 10.122.0.0 0.0.15.255
-permit ip 10.2.88.32 0.0.0.31 10.123.0.0 0.0.15.255
-permit ip 10.2.88.32 0.0.0.31 10.133.0.0 0.0.255.255
-permit ip 10.2.88.32 0.0.0.31 10.134.0.0 0.0.255.255
-deny   ip 10.2.88.32 0.0.0.31 10.0.0.0 0.255.255.255
-deny   ip 10.2.88.32 0.0.0.31 192.168.0.0 0.0.255.255
-deny   ip 10.2.88.32 0.0.0.31 172.16.0.0 0.15.255.255
-permit ip 10.2.88.32 0.0.0.31 any
